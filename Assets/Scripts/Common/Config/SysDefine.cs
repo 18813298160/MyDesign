@@ -83,6 +83,7 @@ namespace SUIFW
 
 		public const string UimodelCfg = "UiModelCfg";
 		public const string UimodelMarketCfg = "UimodelMarketCfg";
+		public const string UimodelMarket2Cfg = "modelMarket2Cfg";
 
         /* 摄像机层深的常量 */
 

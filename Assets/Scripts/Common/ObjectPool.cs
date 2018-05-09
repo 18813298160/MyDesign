@@ -25,7 +25,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public ModelUnit takeOne(string name, bool isUiObj = false)
+    public ModelUnit takeOne(string name, bool isUiObj = false, Vector3 pos = default(Vector3), float scaleFactor = 0.5f, bool setPos = false)
     {
         if (isUiObj && !name.EndsWith("Ui"))
             name += "Ui";
@@ -33,7 +33,7 @@ public class ObjectPool : MonoBehaviour
 		ModelUnit unit = null;
         if(poolDic.Count == 0)
         {
-            unit = NoUnitHandle(name, isUiObj);
+            unit = NoUnitHandle(name, isUiObj, pos, scaleFactor, setPos);
             return unit;
         }
         poolDic.TryGetValue(name, out unit);
@@ -43,16 +43,16 @@ public class ObjectPool : MonoBehaviour
             poolDic.Remove(name);
             return unit;
         }
-		unit = NoUnitHandle(name, isUiObj);
+		unit = NoUnitHandle(name, isUiObj, pos, scaleFactor, setPos);
 		return unit;
     }
 
-    private ModelUnit NoUnitHandle(string modelName, bool isUiModel, bool setPos = false)
+    private ModelUnit NoUnitHandle(string modelName, bool isUiModel, Vector3 pos = default(Vector3), float scaleFactor = 0.5f, bool setPos = false)
     {
-		var unit = ModelMgr.instance.CreateModel(modelName, scaleFactor: 0.5f);
+        var unit = ModelMgr.instance.CreateModel(modelName, pos, scaleFactor, setPos);
 		unit.SetName(modelName);
         if(isUiModel)
-		    unit.SetUiModel(setPos);
+		    unit.SetUiModel();
 		return unit;
     }
 

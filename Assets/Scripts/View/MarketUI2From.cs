@@ -7,8 +7,8 @@ namespace DemoProject
 {
     public class MarketUI2From : BaseUIForm
     {
-        private static Dictionary<string, ModelMarketConfig> modelMarketConfigDic;
-		private static ConfigReader<ModelMarketConfig> modelMarketConfig;
+        private static Dictionary<string, ModelMarketConfig> modelMarket2ConfigDic;
+		private static ConfigReader<ModelMarketConfig> modelMarket2Config;
 
         private Transform content;
 
@@ -37,10 +37,8 @@ namespace DemoProject
                     RigisterButtonObjectEvent(child.name,
                     P =>
                     {
-					    //打开子窗体
-					    OpenUIForm(ProConst.PRO_DETAIL_UIFORM);
-					    //传递数据
-                        DispatchEvent("Props", cfg);
+                        ObjectPool.Instance.takeOne(cfg.modelName, false);
+                        CloseUIForm();
 	                }
 	                );
                 }
@@ -52,14 +50,14 @@ namespace DemoProject
         private ModelMarketConfig GetModelName(string btnName)
 		{
             tmpCfg = null;
-			modelMarketConfigDic.TryGetValue(btnName, out tmpCfg);
+			modelMarket2ConfigDic.TryGetValue(btnName, out tmpCfg);
             return tmpCfg;
 		}
 
         public static void InitCfg()
         {
-            modelMarketConfig = new ConfigReader<ModelMarketConfig>(SysDefine.UimodelMarketCfg);
-			modelMarketConfigDic = modelMarketConfig.LoadConfig();
+            modelMarket2Config = new ConfigReader<ModelMarketConfig>(SysDefine.UimodelMarket2Cfg);
+			modelMarket2ConfigDic = modelMarket2Config.LoadConfig();
         }
 		
 	}

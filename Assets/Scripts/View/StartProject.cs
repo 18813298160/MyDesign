@@ -10,7 +10,8 @@ namespace DemoProject
         {
             GlobalObj.Init();
             ModelMgr.InitCfg();
-            MarketUIFrom.InitCfg();
+			MarketUIFrom.InitCfg();
+			MarketUI2From.InitCfg();
             UiModelView.instance.Init();
             //加载登陆窗体
             UIManager.GetInstance().ShowUIForms(ProConst.LOGON_FROMS);
