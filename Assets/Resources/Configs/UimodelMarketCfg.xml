@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+<item name ="btn1" modelName = "CrankRockerModel" meName = "连杆机构" intro = "由若干构件用低副(转动副、移动副)连接组成的平面机构"/>
+<item name ="btn2" modelName = "SynchroCrankModel" meName = "unknown" intro = "TODO"/>
+<item name ="btn3" modelName = "CrankSlider_CrossCenterModel" meName = "unknown" intro = "TODO"/>
+</Root>

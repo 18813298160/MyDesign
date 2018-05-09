@@ -1,0 +1,40 @@
+{
+  "ConfigInfo": [
+
+    {
+      "Key": "LogonUIForm",
+      "Value": "UIPrefabs\\LogonUIForm"
+    },
+
+    {
+      "Key": "SelectHeroUIForm",
+      "Value": "UIPrefabs\\SelectHeroUIForm"
+    },
+
+    {
+      "Key": "MainCityUIForm",
+      "Value": "UIPrefabs\\MainCityUIForm"
+    },
+
+    {
+      "Key": "HeroInfoUIForm",
+      "Value": "UIPrefabs\\HeroInfoUIForm"
+    },
+
+    {
+      "Key": "MarketUIFrom",
+      "Value": "UIPrefabs\\MarketUIFrom"
+    },
+
+    {
+      "Key": "MarketUI2From",
+      "Value": "UIPrefabs\\MarketUI2From"
+    },
+
+    {
+      "Key": "PropDetailUIForm",
+      "Value": "UIPrefabs\\PropDetailUIForm"
+    }
+
+  ]
+}

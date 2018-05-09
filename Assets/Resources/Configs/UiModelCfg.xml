@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+<item name ="CrankRockerModel" posX = "-0.4" posY = "-0.2" posZ = "0.8"/>
+<item name ="SynchroCrankModel" posX = "-0.4" posY = "-0.2" posZ = "3.8"/>
+<item name ="CrankSlider_CrossCenterModel" posX = "-0.4" posY = "-0.2" posZ = "2.8"/>
+</Root>

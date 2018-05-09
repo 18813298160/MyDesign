@@ -1,0 +1,25 @@
+{
+  "ConfigInfo": [
+
+    {
+      "Key": "CrankRockerModel",
+      "Value": "Mechanism\\CrankRocker"
+    },
+
+    {
+      "Key": "FreeCrankModel",
+      "Value": "Mechanism\\FreeCrank"
+    },
+
+    {
+      "Key": "SynchroCrankModel",
+      "Value": "Mechanism\\SynchroCrank"
+    },
+
+    {
+      "Key": "CrankSlider_CrossCenterModel",
+      "Value": "Mechanism\\CrankSlider_CrossCenter"
+    }
+
+  ]
+}
