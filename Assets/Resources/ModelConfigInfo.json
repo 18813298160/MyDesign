@@ -19,6 +19,11 @@
     {
       "Key": "CrankSlider_CrossCenterModel",
       "Value": "Mechanism\\CrankSlider_CrossCenter"
+    },
+
+    {
+      "Key": "GasEngineModel",
+      "Value": "Machine\\GasEngine"
     }
 
   ]
