@@ -7,8 +7,8 @@ namespace DemoProject
 {
     public class MarketUI2From : BaseUIForm
     {
-        private static Dictionary<string, ModelMarketConfig> modelMarket2ConfigDic;
-		private static ConfigReader<ModelMarketConfig> modelMarket2Config;
+        private static Dictionary<string, ModelMarket2Config> modelMarket2ConfigDic;
+		private static ConfigReader<ModelMarket2Config> modelMarket2Config;
 
         private Transform content;
 
@@ -37,7 +37,8 @@ namespace DemoProject
                     RigisterButtonObjectEvent(child.name,
                     P =>
                     {
-                        ObjectPool.Instance.takeOne(cfg.modelName, false);
+                        Vector3 pos = new Vector3(cfg.posX, cfg.posY, cfg.posZ);
+                        ObjectPool.Instance.takeOne(cfg.modelName, false, pos, 0.2f, true);
                         CloseUIForm();
 	                }
 	                );
@@ -46,8 +47,8 @@ namespace DemoProject
 			}
         }
 
-        private ModelMarketConfig tmpCfg = null;
-        private ModelMarketConfig GetModelName(string btnName)
+        private ModelMarket2Config tmpCfg = null;
+        private ModelMarket2Config GetModelName(string btnName)
 		{
             tmpCfg = null;
 			modelMarket2ConfigDic.TryGetValue(btnName, out tmpCfg);
@@ -56,7 +57,7 @@ namespace DemoProject
 
         public static void InitCfg()
         {
-            modelMarket2Config = new ConfigReader<ModelMarketConfig>(SysDefine.UimodelMarket2Cfg);
+            modelMarket2Config = new ConfigReader<ModelMarket2Config>(SysDefine.UimodelMarket2Cfg);
 			modelMarket2ConfigDic = modelMarket2Config.LoadConfig();
         }
 		

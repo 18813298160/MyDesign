@@ -12,7 +12,6 @@ namespace DemoProject
         public Text introText;
         private RawImage image;
         private DragUiObj dragScript;
-        private Transform btnParentTrans;
 
         public override void RegistEvent()
         {

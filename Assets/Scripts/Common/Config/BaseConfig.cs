@@ -21,3 +21,11 @@ public class ModelMarketConfig : BaseConfig
 	public string meName = "";
 	public string intro = "";
 }
+
+public class ModelMarket2Config : BaseConfig
+{
+	public string modelName = "";
+	public float posX = 0;
+	public float posY = 0;
+	public float posZ = 0;
+}
