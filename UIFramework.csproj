@@ -104,15 +104,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Guide\Script\Base\CSharpSingletion.cs" />
-    <Compile Include="Assets\Guide\Script\Base\EventTriggerListener.cs" />
-    <Compile Include="Assets\Guide\Script\Base\MonoSingletion.cs" />
-    <Compile Include="Assets\Guide\Script\GuideManager.cs" />
-    <Compile Include="Assets\Guide\Script\MakeGuide.cs" />
-    <Compile Include="Assets\Guide\Script\UI\Canvas1.cs" />
-    <Compile Include="Assets\Guide\Script\UI\Panel1.cs" />
-    <Compile Include="Assets\Guide\Script\UI\Panel2.cs" />
-    <Compile Include="Assets\Guide\Script\UIManager1.cs" />
     <Compile Include="Assets\MGS-Machinery\Scripts\Crank\FreeCrank.cs" />
     <Compile Include="Assets\MGS-Machinery\Scripts\Crank\LimitCrank.cs" />
     <Compile Include="Assets\MGS-Machinery\Scripts\Driver\MeDriver.cs" />
@@ -130,13 +121,13 @@
     <Compile Include="Assets\MGS-Machinery\Scripts\Telescopic\SeTelescopicArm.cs" />
     <Compile Include="Assets\MGS-Machinery\Scripts\Telescopic\TelescopicJoint.cs" />
     <Compile Include="Assets\MGS-Machinery\Scripts\UI\HelpUI.cs" />
-    <Compile Include="Assets\Scripts\AvatarBtn.cs" />
-    <Compile Include="Assets\Scripts\AvatarSys.cs" />
+    <Compile Include="Assets\Scripts\Common\CameraCtrl.cs" />
     <Compile Include="Assets\Scripts\Common\Config\BaseConfig.cs" />
     <Compile Include="Assets\Scripts\Common\Config\ConfigManagerByJson.cs" />
     <Compile Include="Assets\Scripts\Common\Config\ConfigReader.cs" />
     <Compile Include="Assets\Scripts\Common\Config\IConfigManager.cs" />
     <Compile Include="Assets\Scripts\Common\Config\SysDefine.cs" />
+    <Compile Include="Assets\Scripts\Common\DragUiObj.cs" />
     <Compile Include="Assets\Scripts\Common\Events\EventTriggerListener.cs" />
     <Compile Include="Assets\Scripts\Common\Events\NotifyCenter.cs" />
     <Compile Include="Assets\Scripts\Common\Exception\JsonAnlysisException.cs" />
@@ -147,7 +138,6 @@
     <Compile Include="Assets\Scripts\Common\MethodExtension.cs" />
     <Compile Include="Assets\Scripts\Common\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Common\Singleton.cs" />
-    <Compile Include="Assets\Scripts\DragUiObj.cs" />
     <Compile Include="Assets\Scripts\Localization\LauguageMgr.cs" />
     <Compile Include="Assets\Scripts\Model\ModelMgr.cs" />
     <Compile Include="Assets\Scripts\Model\ModelUnit.cs" />
@@ -160,24 +150,25 @@
     <Compile Include="Assets\Scripts\TestJson\TestUnityJson2.cs" />
     <Compile Include="Assets\Scripts\TimeMgr\TimeMgr.cs" />
     <Compile Include="Assets\Scripts\TimeMgr\Timer.cs" />
-    <Compile Include="Assets\Scripts\UiModelView.cs" />
     <Compile Include="Assets\Scripts\View\HeroInfoUIForm.cs" />
     <Compile Include="Assets\Scripts\View\LogonUIForm.cs" />
     <Compile Include="Assets\Scripts\View\MainCityUIForm.cs" />
+    <Compile Include="Assets\Scripts\View\MarketUI2From.cs" />
     <Compile Include="Assets\Scripts\View\MarketUIFrom.cs" />
+    <Compile Include="Assets\Scripts\View\OperateModelForm.cs" />
     <Compile Include="Assets\Scripts\View\ProConst.cs" />
     <Compile Include="Assets\Scripts\View\PropDetailUIForm.cs" />
     <Compile Include="Assets\Scripts\View\SelectHeroUIForm.cs" />
     <Compile Include="Assets\Scripts\View\StartProject.cs" />
+    <Compile Include="Assets\Scripts\View\UiModelView.cs" />
     <Compile Include="Assets\Scripts\ViewMgr\BaseUIForm.cs" />
     <Compile Include="Assets\Scripts\ViewMgr\UIManager.cs" />
     <Compile Include="Assets\Scripts\ViewMgr\UIType.cs" />
-    <Compile Include="Assets\Scripts\View\MarketUI2From.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\MGS-Machinery\Readme.txt" />
     <None Include="Assets\Resources\Configs\UiModelCfg.xml" />
     <None Include="Assets\Resources\Configs\UimodelMarketCfg.xml" />
+    <None Include="Assets\Resources\Configs\modelMarket2Cfg.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

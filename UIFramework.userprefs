@@ -1,12 +1,9 @@
 ﻿<Properties StartupConfiguration="{B4AF1B08-298B-E1D0-5875-9AB3294E2FBA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Model/ModelUnit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/View/MarketUIFrom.cs">
     <Files>
-      <File FileName="Assets/Scripts/Model/ModelMgr.cs" Line="42" Column="56" />
-      <File FileName="Assets/Scripts/View/PropDetailUIForm.cs" Line="76" Column="16" />
-      <File FileName="Assets/Scripts/Model/ModelUnit.cs" Line="102" Column="39" />
-      <File FileName="Assets/Scripts/View/HeroInfoUIForm.cs" Line="37" Column="50" />
-      <File FileName="Assets/Scripts/View/MarketUIFrom.cs" Line="8" Column="30" />
-      <File FileName="Assets/Scripts/View/MarketUI2From.cs" Line="13" Column="35" />
+      <File FileName="Assets/Scripts/View/OperateModelForm.cs" Line="42" Column="15" />
+      <File FileName="Assets/Scripts/View/MarketUI2From.cs" Line="46" Column="43" />
+      <File FileName="Assets/Scripts/View/MarketUIFrom.cs" Line="38" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

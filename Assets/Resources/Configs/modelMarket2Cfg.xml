@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root>
-<item name ="btn1" modelName = "GasEngineModel" meName = "引擎" intro = "引擎"/>
+<item name ="btn1" modelName = "GasEngineModel" posX = "-26.3" posY = "1.1" posZ = "-25.1"/>
 </Root>

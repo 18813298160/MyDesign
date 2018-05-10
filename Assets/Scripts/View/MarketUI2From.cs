@@ -12,6 +12,8 @@ namespace DemoProject
 
         private Transform content;
 
+        private ModelUnit curUnit;
+
 		void Awake ()
         {
 		    //窗体性质
@@ -38,8 +40,10 @@ namespace DemoProject
                     P =>
                     {
                         Vector3 pos = new Vector3(cfg.posX, cfg.posY, cfg.posZ);
-                        ObjectPool.Instance.takeOne(cfg.modelName, false, pos, 0.2f, true);
+                        curUnit = ObjectPool.Instance.takeOne(cfg.modelName, false, pos, 0.2f, true);
                         CloseUIForm();
+                        OpenUIForm(ProConst.OPERATEMODELFORM);
+						DispatchEvent("ApartUnit", curUnit);
 	                }
 	                );
                 }

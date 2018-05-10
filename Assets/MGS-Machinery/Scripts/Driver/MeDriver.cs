@@ -2,13 +2,12 @@
 
 namespace Developer.Machinery
 {
-    [AddComponentMenu("Developer/Machinery/MeDriver")]
-    [RequireComponent(typeof(Mechanism))]
+    //[RequireComponent(typeof(Mechanism))]
     public class MeDriver : MonoBehaviour
     {
         #region Property and Field
-        public KeyCode positiveKey = KeyCode.P;
-        public KeyCode negativeKey = KeyCode.N;
+        private KeyCode positiveKey = KeyCode.P;
+        private KeyCode negativeKey = KeyCode.N;
         public ModelUnit unit;
         public string modelName;
 
@@ -32,6 +31,7 @@ namespace Developer.Machinery
         public void DriveMechanism(bool positive = true)
         {
             float dir = positive ? 1.0f : -1.0f;
+            if (!mechanism) return;
 			mechanism.DriveMechanism(dir);
         }
 

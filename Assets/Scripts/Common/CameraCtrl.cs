@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraCtrl : MonoBehaviour
+public class CameraCtrl : Singleton<CameraCtrl>
 {
+    private bool canDragCamera;
 
-	void Update()
+    void Update()
 	{
 		//Zoom out  
 		if (Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -22,5 +23,23 @@ public class CameraCtrl : MonoBehaviour
 			if (Camera.main.orthographicSize >= 1)
 				Camera.main.orthographicSize -= 0.5F;
 		}
+
+		if (Input.GetMouseButton(1) && canDragCamera)
+		{
+            
+			transform.Rotate(-Input.GetAxis("Mouse Y") * 2, Input.GetAxis("Mouse X") * 2, 0);
+		}
 	}
+
+    public Quaternion SetDrag()
+    {
+        Quaternion cachedRot = transform.rotation;
+        canDragCamera = true;
+        return cachedRot;
+    }
+
+    public void SetRot(Quaternion rot)
+    {
+        transform.rotation = rot;
+    }
 }

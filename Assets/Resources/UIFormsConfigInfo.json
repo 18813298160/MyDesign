@@ -34,7 +34,10 @@
     {
       "Key": "PropDetailUIForm",
       "Value": "UIPrefabs\\PropDetailUIForm"
+    },
+    {
+      "Key": "OperateModelForm",
+      "Value": "UIPrefabs\\OperateModelForm"
     }
-
   ]
 }

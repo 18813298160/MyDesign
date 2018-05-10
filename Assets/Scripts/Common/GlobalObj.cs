@@ -4,10 +4,12 @@ using System.Collections;
 public class GlobalObj
 {
     public static Camera UiModelCamera;
+    public static GameObject LabObj;
 	// Use this for initialization
     public static void Init()
 	{
         UiModelCamera = FindGlobalObject<Camera>("ModelCamera");
+        LabObj = GameObject.Find("Lab");
 	}
 
 

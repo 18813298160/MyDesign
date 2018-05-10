@@ -35,6 +35,7 @@ namespace DemoProject
                     {
 					    //打开子窗体
 					    OpenUIForm(ProConst.PRO_DETAIL_UIFORM);
+
 					    //传递数据
                         DispatchEvent("Props", cfg);
 	                }
