@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Developer.Machinery;
 using System;
+using SUIFW;
 
 public class ObjectPool : MonoBehaviour
 {
@@ -51,8 +52,10 @@ public class ObjectPool : MonoBehaviour
     {
         var unit = ModelMgr.instance.CreateModel(modelName, pos, scaleFactor, setPos);
 		unit.SetName(modelName);
-        if(isUiModel)
-		    unit.SetUiModel();
+        if (isUiModel)
+            unit.SetUiModel();
+        else
+            unit.SetLayer(LayerMask.NameToLayer(SysDefine.ModelLayer));
 		return unit;
     }
 

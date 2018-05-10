@@ -71,7 +71,8 @@ namespace SUIFW
             _TraFixed = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_FIXED_NODE);
             _TraPopUp = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_POPUP_NODE);
             _TraUIScripts = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject,SysDefine.SYS_SCRIPTMANAGER_NODE);
-
+            var ca = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, "UICamera");
+            GlobalObj.InitUiCamera(ca.GetComponent<Camera>());
             //把本脚本作为“根UI窗体”的子节点。
             this.gameObject.transform.SetParent(_TraUIScripts, false);
 	        //"根UI窗体"在场景转换的时候，不允许销毁
@@ -134,7 +135,7 @@ namespace SUIFW
             if (string.IsNullOrEmpty(uiFormName)) return;
             //“所有UI窗体”集合中，如果没有记录，则直接返回
             _DicALLUIForms.TryGetValue(uiFormName,out baseUiForm);
-            if(baseUiForm==null ) return;
+            if(baseUiForm == null ) return;
             //根据窗体不同的显示类型，分别作不同的关闭处理
             switch (baseUiForm.CurrentUIType.UIForms_ShowMode)
 	        {
@@ -203,6 +204,15 @@ namespace SUIFW
             {
                 return 0;
             }           
+        }
+
+        public bool IsVisible(string formName)
+        {
+            BaseUIForm curShowForm = null;
+            _DicALLUIForms.TryGetValue(formName, out curShowForm);
+            if (curShowForm == null)
+                return false;
+            return curShowForm.IsVisible();
         }
 
         #endregion

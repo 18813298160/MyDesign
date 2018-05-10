@@ -99,6 +99,18 @@
     <Reference Include="UnityEngine.VR">
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets/DOTween/DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets/DOTween/DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets/DOTween/DOTween43.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
     </Reference>
@@ -134,7 +146,6 @@
     <Compile Include="Assets\Scripts\Common\GlobalObj.cs" />
     <Compile Include="Assets\Scripts\Common\Helps\UIMaskMgr.cs" />
     <Compile Include="Assets\Scripts\Common\Helps\UnityHelper.cs" />
-    <Compile Include="Assets\Scripts\Common\Log\Log.cs" />
     <Compile Include="Assets\Scripts\Common\MethodExtension.cs" />
     <Compile Include="Assets\Scripts\Common\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Common\Singleton.cs" />
@@ -166,6 +177,12 @@
     <Compile Include="Assets\Scripts\ViewMgr\UIType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\DOTween\DOTween.XML" />
+    <None Include="Assets\DOTween\DOTween43.xml" />
+    <None Include="Assets\DOTween\DOTween46.xml" />
+    <None Include="Assets\DOTween\DOTween50.xml" />
+    <None Include="Assets\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\DOTween\readme.txt" />
     <None Include="Assets\Resources\Configs\UiModelCfg.xml" />
     <None Include="Assets\Resources\Configs\UimodelMarketCfg.xml" />
     <None Include="Assets\Resources\Configs\modelMarket2Cfg.xml" />

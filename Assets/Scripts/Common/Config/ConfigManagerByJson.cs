@@ -1,21 +1,7 @@
-﻿/***
- * 
- *    Title: "SUIFW" UI框架项目
- *           主题：基于Json 配置文件的“配置管理器”  
- *    Description: 
- *           功能：
- *                  
- *    Date: 2017
- *    Version: 0.1版本
- *    Modify Recoder: 
- *    
- *   
- */
-
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 namespace SUIFW
 {
@@ -71,12 +57,15 @@ namespace SUIFW
             //参数检查
             if (string.IsNullOrEmpty(jsonPath)) return;
             //解析Json 配置文件
-            try{
+            try
+            {
+                jsonPath = Path.Combine("Configs", jsonPath);
                 configInfo = Resources.Load<TextAsset>(jsonPath);
                 keyvalueInfoObj = JsonUtility.FromJson<KeyValuesInfo>(configInfo.text);
             }
-            catch{
-                throw new JsonAnlysisException(GetType() + "/InitAndAnalysisJson()/Json Analysis Exception ! Parameter jsonPath=" + jsonPath);
+            catch
+            {
+                throw new JsonAnlysisException(GetType() + "Json Analysis Exception, Parameter jsonPath =" + jsonPath);
             }
 
             //数据加载到AppSetting 集合中

@@ -1,42 +1,23 @@
-﻿/***
- * 
- *    Title: "SUIFW" UI框架项目
- *           主题： 英雄信息显示窗体
- *    Description: 
- *           功能： 
- *                  
- *    Date: 2017
- *    Version: 0.1版本
- *    Modify Recoder: 
- *    
- *   
- */
-using System.Collections;
-using System.Collections.Generic;
-using SUIFW;
-using UnityEngine;
+﻿using SUIFW;
 
-namespace DemoProject
-{
-	public class HeroInfoUIForm : BaseUIForm {
+public class HeroInfoUIForm : BaseUIForm {
 
 
-		void Awake () 
+	void Awake () 
+    {
+	    //窗体性质
+        CurrentUIType.UIForms_Type = UIFormType.Fixed;  //固定在主窗体上面显示
+
+		RigisterButtonObjectEvent("BtnItem1 (2)",
+        p =>
         {
-		    //窗体性质
-            CurrentUIType.UIForms_Type = UIFormType.Fixed;  //固定在主窗体上面显示
-
-			RigisterButtonObjectEvent("BtnItem1 (2)",
-	        p =>
-	        {
-                OpenUIForm(ProConst.MARKET_UIFORM);
-			});
-			RigisterButtonObjectEvent("BtnItem1 (1)",
-            p =>
-            {
-	            OpenUIForm(ProConst.MARKET_UI2FORM);
-            });
-        }
-		
-	}
+            OpenUIForm(ProConst.MARKET_UIFORM);
+		});
+		RigisterButtonObjectEvent("BtnItem1 (1)",
+        p =>
+        {
+            OpenUIForm(ProConst.MARKET_UI2FORM);
+        });
+    }
+	
 }

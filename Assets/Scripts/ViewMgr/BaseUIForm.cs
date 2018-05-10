@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 namespace SUIFW
 {
@@ -33,13 +34,18 @@ namespace SUIFW
 	    public virtual void Display()
 	    {
             RegistEvent();
-	        this.gameObject.SetActive(true);
+            ShowTween();
             //设置模态窗体调用(必须是弹出窗体)
             if (_CurrentUIType.UIForms_Type==UIFormType.PopUp)
             {
                 UIMaskMgr.GetInstance().SetMaskWindow(this.gameObject,_CurrentUIType.UIForm_LucencyType);
             }
 	    }
+
+        public virtual void ShowTween()
+        {
+			this.gameObject.SetActive(true);
+        }
 
         /// <summary>
         /// 隐藏状态
@@ -76,7 +82,6 @@ namespace SUIFW
             this.gameObject.SetActive(true);
         }
 
-
         #endregion
 
         #region 封装子类常用的方法
@@ -108,8 +113,14 @@ namespace SUIFW
         /// <summary>
         /// 关闭当前UI窗体
         /// </summary>
-	    protected void CloseUIForm()
+	    protected void CloseUIForm(string otherForm = "")
 	    {
+            if (!string.IsNullOrEmpty(otherForm))
+            {
+                UIManager.GetInstance().CloseUIForms(otherForm);
+                return;
+            }
+
 	        string strUIFromName = string.Empty;            //处理后的UIFrom 名称
 	        int intPosition = -1;
 
@@ -147,6 +158,13 @@ namespace SUIFW
 		{
 			NotifyCenter.instance.UnRegistEvent(eventName, handler);
 		}
+
+        public bool IsVisible()
+        {
+            if (gameObject == null)
+                return false;
+            return gameObject.activeInHierarchy;
+        }
 
         /// <summary>
         /// 显示语言

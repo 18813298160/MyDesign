@@ -1,22 +1,5 @@
-﻿/***
- * 
- *    Title: "SUIFW" UI框架项目
- *           主题： 资源加载管理器      
- *    Description: 
- *           功能： 本功能是在Unity的Resources类的基础之上，增加了“缓存”的处理。
- *                  本脚本适用于
- *    Date: 2017
- *    Version: 0.1版本
- *    Modify Recoder: 
- *    
- *   
- */
-using UnityEngine;
-using UnityEngine.UI;
-using System;
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-
 
 namespace SUIFW
 {

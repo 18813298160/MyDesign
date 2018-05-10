@@ -1,27 +1,9 @@
-﻿/***
- * 
- *    Title: "SUIFW" UI框架项目
- *           主题： 通用配置管理器接口   
- *    Description: 
- *           功能： 
- *                基于“键值对”配置文件的通用解析
- *                  
- *    Date: 2017
- *    Version: 0.1版本
- *    Modify Recoder: 
- *    
- *   
- */
-
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using System.Runtime.CompilerServices;
 
 namespace SUIFW
 {
-	public interface IConfigManager  {
+    public interface IConfigManager  {
 
 		/// <summary>
 		/// 只读属性： 应用设置

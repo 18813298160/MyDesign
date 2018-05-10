@@ -1,23 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SUIFW;
-using UnityEngine;
+﻿using SUIFW;
 
-namespace DemoProject
+public class MainCityUIForm : BaseUIForm
 {
-    public class MainCityUIForm : BaseUIForm
+    public void Awake()
     {
-		public void Awake () 
-        {
-	        //窗体性质
-		    CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
+        //窗体性质
+        CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
 
-		    //事件注册
-            RigisterButtonObjectEvent("BtnMarket",
-                p => OpenUIForm(ProConst.MARKET_UIFORM)           
-                );
+        //事件注册
+        RigisterButtonObjectEvent("BtnMarket",
+            p => OpenUIForm(ProConst.MARKET_UIFORM)
+            );
 
-        }
-		
-	}
+    }
+
 }

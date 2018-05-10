@@ -12,7 +12,6 @@ public class ModelMgr
 
     private static Dictionary<string, ModelConfig> modelConfigDic;
     private static ConfigReader<ModelConfig> modelConfig;
-    private bool isStart = false;
 
     public static ModelMgr instance
     {
@@ -24,7 +23,6 @@ public class ModelMgr
 
     public ModelMgr()
     {
-        isStart = true;
         InitPathData();
         modelObjDic = new Dictionary<int, ModelUnit>();
     }
@@ -35,7 +33,7 @@ public class ModelMgr
 		modelConfigDic = modelConfig.LoadConfig();
     }
 
-    public static Vector3 GetPos(string modelName)
+    public static Vector3 GetPosAndRotInfo(string modelName, out bool needResetRot)
     {
         Vector3 pos = new Vector3();
         ModelConfig cfg = null;
@@ -45,7 +43,10 @@ public class ModelMgr
 			pos.x = cfg.posX;
 			pos.y = cfg.posY;
             pos.z = cfg.posZ;
+            needResetRot = cfg.resetRot == 1;
         }
+        else
+            needResetRot = false;
         return pos;
     }
 
@@ -60,7 +61,6 @@ public class ModelMgr
 
     public void Update()
     {
-        if (!isStart) return;
         foreach(var unit in modelObjDic.Values)
         {
             unit.Update();

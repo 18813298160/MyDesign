@@ -1,23 +1,8 @@
-﻿/***
- * 
- *    Title: "SUIFW" UI框架项目
- *           主题： Unity 帮助脚本
- *    Description: 
- *           功能： 提供程序用户一些常用的功能方法实现，方便程序员快速开发。
- *                  
- *    Date: 2017
- *    Version: 0.1版本
- *    Modify Recoder: 
- *    
- *   
- */
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SUIFW
 {
-	public class UnityHelper : MonoBehaviour {
+    public class UnityHelper : MonoBehaviour {
         
         /// <summary>
         /// 查找子节点对象

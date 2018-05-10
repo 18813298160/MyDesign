@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Developer.Machinery;
 
 /// <summary>
 /// Unity的扩展方法
@@ -46,5 +47,11 @@ static public class MethodExtension
     {
         selfBehavior.transform.localScale *= scale;
 		return selfBehavior;
+    }
+
+    static public MeDriver GetMeDrive(this Transform trans)
+    {
+        var meDriver = trans.GetComponent<MeDriver>();
+        return meDriver;
     }
 }

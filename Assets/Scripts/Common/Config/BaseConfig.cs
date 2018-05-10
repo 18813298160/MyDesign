@@ -13,6 +13,7 @@ public class ModelConfig : BaseConfig
     public float posX = 0;
 	public float posY = 0;
 	public float posZ = 0;
+    public int resetRot = 0;
 }
 
 public class ModelMarketConfig : BaseConfig

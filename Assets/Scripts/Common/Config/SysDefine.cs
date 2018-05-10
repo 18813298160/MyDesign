@@ -62,8 +62,8 @@ namespace SUIFW
 		public const string SYS_PATH_CONFIG_INFO = "SysConfigInfo";
 		public const string MODEL_PATH_CONFIG_INFO = "ModelConfigInfo";
 
-        /* 标签常量 */
-        public const string SYS_TAG_CANVAS = "_TagCanvas";
+		/* 标签常量 */
+		public const string SYS_TAG_CANVAS = "_TagCanvas";
         /* 节点常量 */
         public const string SYS_NORMAL_NODE = "Normal";
         public const string SYS_FIXED_NODE = "Fixed";
@@ -79,7 +79,8 @@ namespace SUIFW
         public const float SYS_UIMASK_IMPENETRABLE_COLOR_RGB = 50 / 255F;
         public const float SYS_UIMASK_IMPENETRABLE_COLOR_RGB_A = 200F / 255F;
 
-        public const string UiModelLayer = "UiModel";
+		public const string UiModelLayer = "UiModel";
+		public const string ModelLayer = "Model";
 
 		public const string UimodelCfg = "UiModelCfg";
 		public const string UimodelMarketCfg = "UimodelMarketCfg";

@@ -47,24 +47,18 @@ public class ModelUnit
         string tmpName = name;
         if (tmpName.EndsWith("Ui"))
             tmpName = tmpName.Substring(0, tmpName.Length - 2);
-        m_Trans.SetPosition(ModelMgr.GetPos(tmpName), true).SetScale(scaleFactor);
+        bool needResetRot = false;
+        m_Trans.SetPosition(ModelMgr.GetPosAndRotInfo(tmpName, out needResetRot), true).SetScale(scaleFactor);
+        if (needResetRot)
+            m_Trans.rotation = Quaternion.identity;
         isUiModel = true;
     }
 
-    private void SetLayer(int layer)
+    public void SetLayer(int layer)
     {
         foreach (var trans in m_GameObj.GetComponentsInChildren<Transform>())
         {
             trans.gameObject.layer = layer;
-        }
-    }
-
-    public void SetApart()
-    {
-        //TODO 装配
-        foreach (Transform part in SelfTrans.GetComponentsInChildren<Transform>())
-        {
-
         }
     }
 
@@ -131,14 +125,14 @@ public class ModelUnit
         m_Driver.DriveMechanism(positive);
     }
 
-
-        public void Destory()
+    public void Destory()
+    {
+        if (m_GameObj != null)
         {
-            if (m_GameObj != null)
-            {
-                Object.Destroy(m_GameObj);
-                m_GameObj = null;
-                m_Trans = null;
-            }
+            Object.Destroy(m_GameObj);
+            m_GameObj = null;
+            m_Trans = null;
         }
     }
+
+}

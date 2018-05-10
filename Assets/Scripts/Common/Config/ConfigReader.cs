@@ -82,6 +82,5 @@ public class ConfigReader<T> where T : BaseConfig
 	/// 配置名称
 	/// </summary>
 	private string configName;
-    private XElement xFile = null;
     private Dictionary<string, T> dic = new Dictionary<string, T>();
 }
