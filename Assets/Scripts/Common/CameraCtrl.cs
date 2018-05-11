@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using SUIFW;
+using DG.Tweening;
 
 public class CameraCtrl : Singleton<CameraCtrl>
 {
@@ -53,5 +54,13 @@ public class CameraCtrl : Singleton<CameraCtrl>
     public void SetRot(Quaternion rot)
     {
         transform.rotation = rot;
+    }
+
+    public void CorrectCamera(float zValue = -1)
+    {
+        Quaternion q = Quaternion.Euler(transform.eulerAngles.x, -90, 0);
+        transform.DORotateQuaternion(q, 1);
+        if(zValue != -1)
+            transform.DOMoveZ(zValue, 1);
     }
 }

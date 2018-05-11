@@ -26,7 +26,7 @@ public class OperateModelForm : BaseUIForm
     private string curModelName;
     private ModelUnit unit;
 
-    private Dictionary<Transform, Vector3> colliderDic;
+    private Dictionary<Transform, CachedInfo> colliderDic;
 
     public override void RegistEvent()
     {
@@ -59,16 +59,23 @@ public class OperateModelForm : BaseUIForm
         RigisterButtonObjectEvent("CloseBtn",
         p =>
         {
+            if (!GlobalObj.LabObj.activeInHierarchy)
+            {
+                ExitFunc();
+                return;
+            }
             CloseUIForm();
+			CameraCtrl.instance.CorrectCamera();
             GlobalObj.LabObj.SetActive(true);
             UIManager.GetInstance().ShowUIForms(ProConst.HERO_INFO_UIFORM);
             ObjectPool.Instance.putBack(unit);
         });
-        colliderDic = new Dictionary<Transform, Vector3>();
+        colliderDic = new Dictionary<Transform, CachedInfo>();
         loadingObj = UnityHelper.FindTheChildNode(gameObject, "LoadingObj").gameObject;
         loadingObj.SetActive(false);
         loadingImage = UnityHelper.GetTheChildNodeComponetScripts<Image>(loadingObj, "progress");
         loadingImage.fillAmount = 0;
+        canApart = false;
     }
 
     void Update()
@@ -90,7 +97,7 @@ public class OperateModelForm : BaseUIForm
             curSelectedTrans = hit.collider.transform;
             //缓存零件信息
             if (!colliderDic.ContainsKey(hit.collider.transform))
-                colliderDic.Add(hit.collider.transform, curSelectedTrans.position);
+                colliderDic.Add(hit.collider.transform, new CachedInfo(curSelectedTrans.parent, curSelectedTrans.position));
 
             Vector3 screenPos = GlobalObj.mainCamera.WorldToScreenPoint(curSelectedTrans.position);
             Vector3 worldPos = GlobalObj.mainCamera.ScreenToWorldPoint(
@@ -102,6 +109,7 @@ public class OperateModelForm : BaseUIForm
             curDriver = curSelectedTrans.GetMeDrive();
             if (curDriver)
                 curDriver.SetDriveCapability(false);
+            curSelectedTrans.SetParent(ModelMgr.instance.modelRoot);
         }
     }
 
@@ -112,6 +120,7 @@ public class OperateModelForm : BaseUIForm
             resetBtn.enabled = true;
             initialCamRot = CameraCtrl.instance.SetDrag();
             GlobalObj.LabObj.SetActive(false);
+
             canApart = true;
             if (virtualText)
                 virtualText.text = "退出虚拟\n拆装环境";
@@ -121,7 +130,7 @@ public class OperateModelForm : BaseUIForm
     }
 
     //退出虚拟拆装环境
-    void ExitFunc(GameObject t)
+    void ExitFunc(GameObject t = null)
     {
         if (GlobalObj.LabObj.activeInHierarchy) return;
         resetBtn.enabled = false;
@@ -160,13 +169,15 @@ public class OperateModelForm : BaseUIForm
             var driver = trans.GetMeDrive();
             if (driver)
                 driver.SetDriveCapability(true);
-            trans.DOMove(pair.Value, 1);
+            trans.DOMove(pair.Value.pos, 1);
+            trans.SetParent(pair.Value.parent);
         }
     }
 
     private IEnumerator LoadProgress(Action doneCb = null)
     {
-        loadingObj.SetActive(true); ;
+        loadingObj.SetActive(true);
+        CameraCtrl.instance.CorrectCamera(unit.SelfTrans.position.z);
         int i = 0;
         while (i < 80)
         {
@@ -180,4 +191,16 @@ public class OperateModelForm : BaseUIForm
         loadingObj.SetActive(false);
     }
 
+}
+
+public class CachedInfo
+{
+    public Transform parent;
+    public Vector3 pos;
+
+    public CachedInfo(Transform p, Vector3 pos)
+    {
+        this.parent = p;
+        this.pos = pos;
+    }
 }

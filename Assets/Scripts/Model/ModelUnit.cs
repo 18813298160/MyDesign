@@ -51,6 +51,8 @@ public class ModelUnit
         m_Trans.SetPosition(ModelMgr.GetPosAndRotInfo(tmpName, out needResetRot), true).SetScale(scaleFactor);
         if (needResetRot)
             m_Trans.rotation = Quaternion.identity;
+        if (m_Trans.GetComponent<Rigidbody>() != null)
+            m_Trans.GetComponent<Rigidbody>().useGravity = false;
         isUiModel = true;
     }
 
