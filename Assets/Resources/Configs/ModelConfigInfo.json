@@ -24,6 +24,11 @@
     {
       "Key": "GasEngineModel",
       "Value": "Machine\\GasEngine"
+    },
+
+    {
+      "Key": "ExcavatorModel",
+      "Value": "Machine\\Excavator"
     }
 
   ]

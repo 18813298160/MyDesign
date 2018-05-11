@@ -4,4 +4,5 @@
 <item name ="btn2" modelName = "SynchroCrankModel" meName = "unknown" intro = "TODO"/>
 <item name ="btn3" modelName = "CrankSlider_CrossCenterModel" meName = "unknown" intro = "TODO"/>
 <item name ="GasEngineModel" modelName = "GasEngineModel" meName = "unknown" intro = "TODO"/>
+<item name ="ExcavatorModel" modelName = "ExcavatorModel" meName = "unknown" intro = "TODO"/>
 </Root>
