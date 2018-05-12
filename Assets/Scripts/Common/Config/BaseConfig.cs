@@ -29,4 +29,5 @@ public class ModelMarket2Config : BaseConfig
 	public float posX = 0;
 	public float posY = 0;
 	public float posZ = 0;
+    public string title = "";
 }

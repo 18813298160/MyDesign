@@ -9,8 +9,13 @@ public class MarketUI2From : BaseUIForm
     private static ConfigReader<ModelMarket2Config> modelMarket2Config;
 
     private Transform content;
-
     private ModelUnit curUnit;
+
+	public static void InitCfg()
+	{
+		modelMarket2Config = new ConfigReader<ModelMarket2Config>(SysDefine.UimodelMarket2Cfg);
+		modelMarket2ConfigDic = modelMarket2Config.LoadConfig();
+	}
 
     public override void ShowTween()
     {
@@ -50,7 +55,7 @@ public class MarketUI2From : BaseUIForm
                     CloseUIForm();
                     CloseUIForm(ProConst.HERO_INFO_UIFORM);
                     OpenUIForm(ProConst.OPERATEMODELFORM);
-                    DispatchEvent("ApartUnit", curUnit);
+                    DispatchEvent("ApartUnit", curUnit, cfg.title);
                 }
                 );
             }
@@ -64,12 +69,6 @@ public class MarketUI2From : BaseUIForm
         tmpCfg = null;
         modelMarket2ConfigDic.TryGetValue(btnName, out tmpCfg);
         return tmpCfg;
-    }
-
-    public static void InitCfg()
-    {
-        modelMarket2Config = new ConfigReader<ModelMarket2Config>(SysDefine.UimodelMarket2Cfg);
-        modelMarket2ConfigDic = modelMarket2Config.LoadConfig();
     }
 
 }

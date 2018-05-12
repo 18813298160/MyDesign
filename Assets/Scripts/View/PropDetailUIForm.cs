@@ -6,7 +6,7 @@ using Developer.Machinery;
 
 public class PropDetailUIForm : BaseUIForm
 {
-    public Text TxtName;                                //窗体显示名称
+    public Text TxtName;
     public Text introText;
     private RawImage image;
     private DragUiObj dragScript;

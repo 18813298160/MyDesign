@@ -10,22 +10,49 @@ using DG.Tweening;
 public class OperateModelForm : BaseUIForm
 {
 
-    public Text virtualText;
+	public class CachedInfo
+	{
+		public Transform parent;
+		public Vector3 pos;
 
-    private Button resetBtn;
+		public CachedInfo(Transform p, Vector3 pos)
+		{
+			this.parent = p;
+			this.pos = pos;
+		}
+	}
+
+	public Text virtualText;
+	public Text titleText;
+
     private Ray ray;
     private RaycastHit hit;
-    private bool flag = false;
+	private Button resetBtn;
     private Transform curSelectedTrans;
     private Quaternion initialCamRot;
-    private bool canApart = false;
-    private MeDriver curDriver;
-
     private GameObject loadingObj;
     private Image loadingImage;
-    private string curModelName;
-    private ModelUnit unit;
+	private bool flag = false;
+	private bool canApart = false;
 
+    /// <summary>
+    /// 当前展示的模型名称
+    /// </summary>
+    private string curModelName;
+
+	/// <summary>
+	/// 当前展示的模型的驱动器实例对象
+	/// </summary>
+	private MeDriver curDriver;
+
+	/// <summary>
+	/// 当前展示的模型实例对象
+	/// </summary>
+	private ModelUnit unit;
+
+    /// <summary>
+    /// 缓存零件信息
+    /// </summary>
     private Dictionary<Transform, CachedInfo> colliderDic;
 
     public override void RegistEvent()
@@ -44,6 +71,8 @@ public class OperateModelForm : BaseUIForm
         if (unit != null)
         {
             curModelName = unit.name;
+            if (titleText)
+                titleText.text = args[1].ToString();
         }
     }
 
@@ -113,7 +142,7 @@ public class OperateModelForm : BaseUIForm
         }
     }
 
-    void EnterFunc(GameObject t)
+    private void EnterFunc(GameObject t)
     {
         StartCoroutine(LoadProgress(() =>
         {
@@ -130,7 +159,7 @@ public class OperateModelForm : BaseUIForm
     }
 
     //退出虚拟拆装环境
-    void ExitFunc(GameObject t = null)
+    private void ExitFunc(GameObject t = null)
     {
         if (GlobalObj.LabObj.activeInHierarchy) return;
         resetBtn.enabled = false;
@@ -191,16 +220,4 @@ public class OperateModelForm : BaseUIForm
         loadingObj.SetActive(false);
     }
 
-}
-
-public class CachedInfo
-{
-    public Transform parent;
-    public Vector3 pos;
-
-    public CachedInfo(Transform p, Vector3 pos)
-    {
-        this.parent = p;
-        this.pos = pos;
-    }
 }

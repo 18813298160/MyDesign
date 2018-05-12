@@ -32,6 +32,12 @@ namespace SUIFW
             return lister;
         }
 
+        public static EventTriggerListener Get(Transform trans)
+		{
+			EventTriggerListener lister = trans.AddOrGetComponent<EventTriggerListener>();
+			return lister;
+		}
+
         public override void OnPointerClick(PointerEventData eventData)
         {
             if(onClick!=null)

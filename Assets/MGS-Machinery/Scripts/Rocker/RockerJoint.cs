@@ -37,6 +37,7 @@ namespace Developer.Machinery
 #if UNITY_EDITOR
         protected virtual void Update()
         {
+            //不知道是什么鬼，目前没发现这句话的作用
             if (!Application.isPlaying && rockJoint)
                 DriveMechanism();
         }

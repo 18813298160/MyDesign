@@ -2,6 +2,8 @@
 using UnityEngine;
 using DG.Tweening;
 using SUIFW;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MarketUIFrom : BaseUIForm
 {
@@ -9,6 +11,12 @@ public class MarketUIFrom : BaseUIForm
     public static ConfigReader<ModelMarketConfig> modelMarketConfig { get; private set; }
 
     private Transform content;
+
+	public static void InitCfg()
+	{
+		modelMarketConfig = new ConfigReader<ModelMarketConfig>(SysDefine.UimodelMarketCfg);
+		modelMarketConfigDic = modelMarketConfig.LoadConfig();
+	}
 
     public override void ShowTween()
     {
@@ -31,6 +39,7 @@ public class MarketUIFrom : BaseUIForm
             );
 
         content = UnityHelper.FindTheChildNode(gameObject, "content");
+
         foreach (Transform child in content.GetComponentsInChildren<Transform>())
         {
             var cfg = GetModelCfg(child.name);
@@ -46,6 +55,19 @@ public class MarketUIFrom : BaseUIForm
                         DispatchEvent("Props", cfg);
                 }
                 );
+                Transform showTextTrans = UnityHelper.FindTheChildNode(child.gameObject, "TextShow");
+                if (showTextTrans)
+                {
+                    showTextTrans.GetComponent<Text>().text = cfg.meName;
+                    EventTriggerListener.Get(child).onEnter = obj =>
+                    {
+                        showTextTrans.gameObject.SetActive(true);
+                    };
+                    EventTriggerListener.Get(child).onExit = obj =>
+                    {
+	                    showTextTrans.gameObject.SetActive(false);
+                    };
+                }
             }
 
         }
@@ -57,12 +79,6 @@ public class MarketUIFrom : BaseUIForm
         tmpCfg = null;
         modelMarketConfigDic.TryGetValue(btnName, out tmpCfg);
         return tmpCfg;
-    }
-
-    public static void InitCfg()
-    {
-        modelMarketConfig = new ConfigReader<ModelMarketConfig>(SysDefine.UimodelMarketCfg);
-        modelMarketConfigDic = modelMarketConfig.LoadConfig();
     }
 
 }
