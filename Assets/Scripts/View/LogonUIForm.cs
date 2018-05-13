@@ -10,7 +10,10 @@ public class LogonUIForm : BaseUIForm
 		base.ShowTween();
 		var canvasGroup = gameObject.AddOrGetComponent<CanvasGroup>();
 		canvasGroup.alpha = 0;
-		canvasGroup.DOFade(1, 1);
+        canvasGroup.DOFade(1, 0.5f).OnComplete(() =>
+        {
+            GuideManager.instance.Next();
+        });
 	}
 
     public void Awake()

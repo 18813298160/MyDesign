@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{B4AF1B08-298B-E1D0-5875-9AB3294E2FBA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/View/MarketUIFrom.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Guide/GuideManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/View/OperateModelForm.cs" Line="95" Column="14" />
-      <File FileName="Assets/Scripts/Common/Config/BaseConfig.cs" Line="31" Column="24" />
-      <File FileName="Assets/Scripts/ViewMgr/BaseUIForm.cs" Line="100" Column="72" />
-      <File FileName="Assets/Scripts/View/MarketUIFrom.cs" Line="55" Column="53" />
+      <File FileName="Assets/Scripts/Guide/GuideManager.cs" Line="65" Column="14" />
+      <File FileName="Assets/Scripts/TimeMgr/TimeMgr.cs" Line="6" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -31,3 +31,15 @@ public class ModelMarket2Config : BaseConfig
 	public float posZ = 0;
     public string title = "";
 }
+
+public class GuideProgressConfig : BaseConfig
+{
+    public string curFile = "";
+    public int curIndex = 0;
+    public int isFinish = 0;
+}
+
+public class GuideFileConfig : BaseConfig
+{
+	public string btns = "";
+}

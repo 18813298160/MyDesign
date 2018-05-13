@@ -30,7 +30,8 @@ public class OperateModelForm : BaseUIForm
 	private Button resetBtn;
     private Transform curSelectedTrans;
     private Quaternion initialCamRot;
-    private GameObject loadingObj;
+	private GameObject loadingObj;
+	private GameObject mainTitleObj;
     private Image loadingImage;
 	private bool flag = false;
 	private bool canApart = false;
@@ -100,6 +101,8 @@ public class OperateModelForm : BaseUIForm
             ObjectPool.Instance.putBack(unit);
         });
         colliderDic = new Dictionary<Transform, CachedInfo>();
+        mainTitleObj = UnityHelper.FindTheChildNode(gameObject, "mainTitleObj").gameObject;
+        mainTitleObj.SetActive(false);
         loadingObj = UnityHelper.FindTheChildNode(gameObject, "LoadingObj").gameObject;
         loadingObj.SetActive(false);
         loadingImage = UnityHelper.GetTheChildNodeComponetScripts<Image>(loadingObj, "progress");
@@ -149,7 +152,7 @@ public class OperateModelForm : BaseUIForm
             resetBtn.enabled = true;
             initialCamRot = CameraCtrl.instance.SetDrag();
             GlobalObj.LabObj.SetActive(false);
-
+            mainTitleObj.SetActive(true);
             canApart = true;
             if (virtualText)
                 virtualText.text = "退出虚拟\n拆装环境";
@@ -167,7 +170,8 @@ public class OperateModelForm : BaseUIForm
             CameraCtrl.instance.SetRot(initialCamRot);
         CameraCtrl.instance.ResetFieldView();
         GlobalObj.LabObj.SetActive(true);
-        canApart = false;
+		mainTitleObj.SetActive(false);
+		canApart = false;
         if (virtualText)
             virtualText.text = "进入虚拟\n拆装环境";
         RigisterButtonObjectEvent("StartBtn", EnterFunc);

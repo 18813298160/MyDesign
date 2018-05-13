@@ -149,6 +149,8 @@
     <Compile Include="Assets\Scripts\Common\MethodExtension.cs" />
     <Compile Include="Assets\Scripts\Common\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Common\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Guide\GuideManager.cs" />
+    <Compile Include="Assets\Scripts\Guide\MakeGuide.cs" />
     <Compile Include="Assets\Scripts\Localization\LauguageMgr.cs" />
     <Compile Include="Assets\Scripts\Model\ModelMgr.cs" />
     <Compile Include="Assets\Scripts\Model\ModelUnit.cs" />
@@ -183,6 +185,8 @@
     <None Include="Assets\DOTween\DOTween50.xml" />
     <None Include="Assets\DOTween\Editor\DOTweenEditor.XML" />
     <None Include="Assets\DOTween\readme.txt" />
+    <None Include="Assets\Resources\Configs\GuideFileDefine.xml" />
+    <None Include="Assets\Resources\Configs\GuideProgress.xml" />
     <None Include="Assets\Resources\Configs\UiModelCfg.xml" />
     <None Include="Assets\Resources\Configs\UimodelMarketCfg.xml" />
     <None Include="Assets\Resources\Configs\modelMarket2Cfg.xml" />

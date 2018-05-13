@@ -13,6 +13,7 @@ namespace SUIFW
         /// <returns></returns>
 	    public static Transform FindTheChildNode(GameObject goParent,string chiildName)
         {
+            if (goParent == null) return null;
             Transform searchTrans = null;                   //查找结果
 
             searchTrans=goParent.transform.Find(chiildName);

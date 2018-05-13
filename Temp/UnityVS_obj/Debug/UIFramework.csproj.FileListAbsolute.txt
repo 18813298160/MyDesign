@@ -64,7 +64,6 @@
 /Users/hushiyu/Desktop/SUIFWDemo/UIFramework/Temp/UnityVS_bin/Debug/UnityEditor.xml
 /Users/hushiyu/Desktop/SUIFWDemo/UIFramework/Temp/UnityVS_bin/Debug/Mono.Security.dll.mdb
 /Users/hushiyu/Desktop/SUIFWDemo/UIFramework/Temp/UnityVS_bin/Debug/Unity.UNetWeaver.dll.mdb
-/Users/hushiyu/Desktop/SUIFWDemo/UIFramework/Temp/UnityVS_obj/Debug/UIFramework.csprojResolveAssemblyReference.cache
 /Users/hushiyu/Desktop/SUIFWDemo/UIFramework/Temp/UnityVS_obj/Debug/UIFramework.csproj.CoreCompileInputs.cache
 /Users/hushiyu/Desktop/SUIFWDemo/UIFramework/Temp/UnityVS_obj/Debug/Assembly-CSharp.dll
 /Users/hushiyu/Desktop/SUIFWDemo/UIFramework/Temp/UnityVS_obj/Debug/Assembly-CSharp.pdb

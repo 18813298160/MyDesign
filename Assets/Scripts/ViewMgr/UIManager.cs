@@ -1,19 +1,4 @@
-﻿/***
- * 
- *    Title: UI框架项目
- *           主题： UI管理器  
- *    Description: 
- *           功能： 是整个UI框架的核心，用户程序通过本脚本，来实现框架绝大多数的功能实现。
- *                  
- *    Date: 2018
- *    Version: 0.1版本
- *    Modify Recoder: 
- *    
- * 
- * 
- *     
- */
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,8 +23,10 @@ namespace SUIFW
 	    private Transform _TraFixed = null;
         //弹出节点
 	    private Transform _TraPopUp = null;
-        //UI管理脚本的节点
-	    private Transform _TraUIScripts = null;
+		//UI管理脚本的节点
+		private Transform _TraUIScripts = null;
+        //新手引导的Mask
+		private Transform GuideMask = null;
 
 
         /// <summary>
@@ -70,9 +57,12 @@ namespace SUIFW
 	        _TraNormal = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_NORMAL_NODE);
             _TraFixed = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_FIXED_NODE);
             _TraPopUp = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_POPUP_NODE);
-            _TraUIScripts = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject,SysDefine.SYS_SCRIPTMANAGER_NODE);
+			_TraUIScripts = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_SCRIPTMANAGER_NODE);
+            GuideMask = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject,SysDefine.GUIDE_MASK);
             var ca = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, "UICamera");
             GlobalObj.InitUiCamera(ca.GetComponent<Camera>());
+			GlobalObj.InitCanvas(_TraCanvasTransfrom);
+            GlobalObj.InitGuideMask(GuideMask);
             //把本脚本作为“根UI窗体”的子节点。
             this.gameObject.transform.SetParent(_TraUIScripts, false);
 	        //"根UI窗体"在场景转换的时候，不允许销毁

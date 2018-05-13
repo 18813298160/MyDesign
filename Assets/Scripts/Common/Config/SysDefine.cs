@@ -68,7 +68,8 @@ namespace SUIFW
         public const string SYS_NORMAL_NODE = "Normal";
         public const string SYS_FIXED_NODE = "Fixed";
         public const string SYS_POPUP_NODE = "PopUp";
-        public const string SYS_SCRIPTMANAGER_NODE = "_ScriptMgr";
+		public const string SYS_SCRIPTMANAGER_NODE = "_ScriptMgr";
+		public const string GUIDE_MASK = "GuideMask";
         /* 遮罩管理器中，透明度常量 */
         public const float SYS_UIMASK_LUCENCY_COLOR_RGB = 255 / 255F;
         public const float SYS_UIMASK_LUCENCY_COLOR_RGB_A = 0F / 255F;
@@ -85,6 +86,8 @@ namespace SUIFW
 		public const string UimodelCfg = "UiModelCfg";
 		public const string UimodelMarketCfg = "UimodelMarketCfg";
 		public const string UimodelMarket2Cfg = "modelMarket2Cfg";
+		public const string GuideProgressCfg = "GuideProgress";
+		public const string GuideFileCfg = "GuideFileDefine"; 
 
         /* 摄像机层深的常量 */
 
