@@ -32,9 +32,9 @@ public class CameraCtrl : Singleton<CameraCtrl>
 				Camera.main.orthographicSize -= 0.5F;
 		}
 
-		if (Input.GetMouseButton(1) && canDragCamera)
-		{
-			if (GlobalObj.LabObj.activeInHierarchy) return;
+        if (Input.GetMouseButton(1) && canDragCamera)
+        {
+            if (GlobalObj.LabObj.activeInHierarchy) return;
 			transform.Rotate(-Input.GetAxis("Mouse Y") * 2, Input.GetAxis("Mouse X") * 2, 0);
 		}
 	}

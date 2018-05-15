@@ -123,6 +123,7 @@
 'Assets/Scripts/Common/MethodExtension.cs'
 'Assets/Scripts/Common/ObjectPool.cs'
 'Assets/Scripts/Common/Singleton.cs'
+'Assets/Scripts/DynamicImage.cs'
 'Assets/Scripts/Guide/GuideManager.cs'
 'Assets/Scripts/Guide/MakeGuide.cs'
 'Assets/Scripts/Localization/LauguageMgr.cs'

@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{B4AF1B08-298B-E1D0-5875-9AB3294E2FBA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Guide/GuideManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Shader/DynamicImage.shader">
     <Files>
-      <File FileName="Assets/Scripts/Guide/GuideManager.cs" Line="65" Column="14" />
-      <File FileName="Assets/Scripts/TimeMgr/TimeMgr.cs" Line="6" Column="18" />
+      <File FileName="Assets/Scripts/View/OperateModelForm.cs" Line="98" Column="19" />
+      <File FileName="Assets/Resources/Shader/DynamicImage.shader" Line="107" Column="19" />
+      <File FileName="Assets/Scripts/DynamicImage.cs" Line="96" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -8,6 +8,8 @@ using SUIFW;
 public class GuideManager : Singleton<GuideManager> {
 
     private Transform maskTra;
+    private Transform finger;
+    private Vector3 offset = new Vector2(28, -33);
 
     private string curGuideFile;
     private int nowIndex;
@@ -54,7 +56,7 @@ public class GuideManager : Singleton<GuideManager> {
         }
         else//加载下一个文件
         {
-            maskTra.gameObject.SetActive(false);
+			maskTra.gameObject.SetActive(false);
      
             int index = int.Parse(curGuideFile.Substring(curGuideFile.Length - 1));
             index++;
@@ -110,7 +112,13 @@ public class GuideManager : Singleton<GuideManager> {
         maskTra.gameObject.SetActive(true);
         maskTra.SetAsLastSibling();
 
-        go.AddOrGetComponent<Canvas>().overrideSorting = true;
+        finger = UnityHelper.FindTheChildNode(maskTra.gameObject, "finger");
+		Vector3 newPos = maskTra.InverseTransformPoint(go.transform.position);
+        finger.localPosition = newPos + offset;
+        finger.AddOrGetComponent<Canvas>().overrideSorting = true;
+		finger.GetComponent<Canvas>().sortingOrder = 2;
+
+		go.AddOrGetComponent<Canvas>().overrideSorting = true;
         go.GetComponent<Canvas>().sortingOrder = 1;
         go.AddOrGetComponent<GraphicRaycaster>();
 
@@ -119,3 +127,4 @@ public class GuideManager : Singleton<GuideManager> {
     }
 
 }
+

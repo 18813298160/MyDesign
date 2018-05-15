@@ -149,6 +149,7 @@
     <Compile Include="Assets\Scripts\Common\MethodExtension.cs" />
     <Compile Include="Assets\Scripts\Common\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Common\Singleton.cs" />
+    <Compile Include="Assets\Scripts\DynamicImage.cs" />
     <Compile Include="Assets\Scripts\Guide\GuideManager.cs" />
     <Compile Include="Assets\Scripts\Guide\MakeGuide.cs" />
     <Compile Include="Assets\Scripts\Localization\LauguageMgr.cs" />
@@ -190,6 +191,7 @@
     <None Include="Assets\Resources\Configs\UiModelCfg.xml" />
     <None Include="Assets\Resources\Configs\UimodelMarketCfg.xml" />
     <None Include="Assets\Resources\Configs\modelMarket2Cfg.xml" />
+    <None Include="Assets\Resources\Shader\DynamicImage.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

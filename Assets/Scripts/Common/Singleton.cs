@@ -1,9 +1,6 @@
-﻿﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 //继承MonoBehaviour的单例模板类
-using System;
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
 	private static T _instance;
@@ -13,8 +10,12 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 		{
 			if (_instance == null)
 			{
-                GameObject go = new GameObject(typeof(T).Name);
-                _instance = go.AddComponent<T>();
+                _instance = FindObjectOfType<T>();
+                if (_instance == null)
+                {
+                    GameObject go = new GameObject(typeof(T).Name);
+                    _instance = go.AddComponent<T>();
+                }
 			}
 			return _instance;
 		}
