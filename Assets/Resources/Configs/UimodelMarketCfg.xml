@@ -2,7 +2,7 @@
 <Root>
 <item name ="btn1" modelName = "CrankRockerModel" meName = "连杆机构" intro = "由若干构件用低副(转动副、移动副)连接组成的平面机构"/>
 <item name ="btn2" modelName = "SynchroCrankModel" meName = "unknown" intro = "TODO"/>
-<item name ="btn3" modelName = "CrankSlider_CrossCenterModel" meName = "unknown" intro = "TODO"/>
+<item name ="btn3" modelName = "CrankSlider_CrossCenterModel" meName = "曲柄滑块" intro = "曲柄连杆机构是指用曲柄和滑块来实现转动和移动相互转换的平面连杆机构。曲柄滑块机构中与机架构成移动副的构件为滑块，通过转动副联接曲柄和滑块的构件为连杆。"/>
 <item name ="GasEngineModel" modelName = "GasEngineModel" meName = "unknown" intro = "TODO"/>
 <item name ="ExcavatorModel" modelName = "ExcavatorModel" meName = "unknown" intro = "TODO"/>
 </Root>

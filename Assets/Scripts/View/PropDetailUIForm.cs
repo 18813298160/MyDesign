@@ -70,7 +70,7 @@ public class PropDetailUIForm : BaseUIForm
         RigisterButtonObjectEvent("Btn3",
         p =>
         {
-            modelUnit.StartTimer(2, true);
+            modelUnit.StartTimer(10, true);
         });
         RigisterButtonObjectEvent("Btn4",
         p =>
